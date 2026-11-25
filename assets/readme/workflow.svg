@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Ask in plain English, the AI runs Paldea Coach, you get an answer for your team</title>
+  <desc id="desc">Three steps. You ask: should Tinkatuff learn Play Rough? The AI runs paldea learn Tinkatuff and paldea movecalc against your save. You get: yes, over Draining Kiss. Expected damage: Play Rough 83, Metal Claw 48, Draining Kiss 25.</desc>
+
+  <defs>
+    <linearGradient id="sv" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0.5" stop-color="#F0483E"/>
+      <stop offset="0.5" stop-color="#9B6BFF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="360" rx="24" fill="#15121C"/>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <!-- Step labels -->
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" letter-spacing="1.5" fill="#9A93A8">
+      <text x="64" y="68">1 · YOU ASK</text>
+      <text x="435" y="68">2 · AI RUNS</text>
+      <text x="806" y="68">3 · YOU GET</text>
+    </g>
+
+    <!-- 1. Question -->
+    <g transform="translate(64 92)">
+      <rect width="330" height="204" rx="18" fill="#211B2E"/>
+      <rect width="6" height="204" rx="3" fill="#9B6BFF"/>
+      <text x="30" y="92" font-size="28" font-weight="600" fill="#F5F1E8">Should Tinkatuff</text>
+      <text x="30" y="130" font-size="28" font-weight="600" fill="#F5F1E8">learn Play Rough?</text>
+    </g>
+
+    <path d="M404 194 h22 m-9 -9 l9 9 l-9 9" fill="none" stroke="#9A93A8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- 2. Tool calls -->
+    <g transform="translate(435 92)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+      <rect width="330" height="204" rx="18" fill="#0E0C13" stroke="#2A2336" stroke-width="2"/>
+      <text x="24" y="56" font-size="19" fill="#F5F1E8"><tspan fill="#9A93A8">$</tspan> paldea learn Tinkatuff</text>
+      <text x="24" y="92" font-size="19" fill="#F5F1E8"><tspan fill="#9A93A8">$</tspan> paldea movecalc …</text>
+      <rect x="24" y="134" width="44" height="10" rx="5" fill="url(#sv)"/>
+      <text x="82" y="145" font-size="18" fill="#9A93A8">reads your save,</text>
+      <text x="82" y="172" font-size="18" fill="#9A93A8">never writes to it</text>
+    </g>
+
+    <path d="M775 194 h22 m-9 -9 l9 9 l-9 9" fill="none" stroke="#9A93A8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- 3. Answer (real movecalc output, Tinkatuff Lv34) -->
+    <g transform="translate(806 92)">
+      <rect width="330" height="204" rx="18" fill="#211B2E"/>
+      <rect width="6" height="204" rx="3" fill="#F0483E"/>
+      <text x="30" y="50" font-size="22" font-weight="700" fill="#F5F1E8">Yes, over Draining Kiss</text>
+      <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18">
+        <g transform="translate(30 76)">
+          <text x="0" y="16" fill="#F5F1E8">Play Rough</text>
+          <rect x="150" y="3" width="80" height="14" rx="7" fill="#F0483E"/>
+          <text x="272" y="16" fill="#F5F1E8" text-anchor="end">83</text>
+        </g>
+        <g transform="translate(30 112)">
+          <text x="0" y="16" fill="#C9C3D4">Metal Claw</text>
+          <rect x="150" y="3" width="46" height="14" rx="7" fill="#9B6BFF"/>
+          <text x="272" y="16" fill="#C9C3D4" text-anchor="end">48</text>
+        </g>
+        <g transform="translate(30 148)">
+          <text x="0" y="16" fill="#9A93A8">Draining Kiss</text>
+          <rect x="150" y="3" width="24" height="14" rx="7" fill="#4A3F5E"/>
+          <text x="272" y="16" fill="#9A93A8" text-anchor="end">25</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

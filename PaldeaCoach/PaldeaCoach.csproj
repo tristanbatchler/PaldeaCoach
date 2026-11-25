@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PKHeX.Core" Version="25.12.21" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Move data from PokeAPI (github.com/PokeAPI/pokeapi, data/v2/csv/): power/accuracy/category and multi-hit counts -->
+    <EmbeddedResource Include="Data\moves.csv" LogicalName="moves.csv" />
+    <EmbeddedResource Include="Data\move_meta.csv" LogicalName="move_meta.csv" />
+    <!-- Optional TM Machine recipes (base game TM001-171), generated locally by tools/scrape_tm_recipes.py.
+         Not distributed with the repo: the source site doesn't permit redistributing its content. -->
+    <EmbeddedResource Include="Data\tm_recipes.csv" LogicalName="tm_recipes.csv" Condition="Exists('Data\tm_recipes.csv')" />
+  </ItemGroup>
+
+</Project>

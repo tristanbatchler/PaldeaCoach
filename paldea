@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Runs Paldea Coach, building it first if needed. Usage: ./paldea <command> [args]   (./paldea help)
+#
+# Save file: set POKEMON_SAVE (in your shell or in a .env file next to this script) to your
+# Scarlet/Violet "main" save, or put a copy at ./main.
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [ -z "${POKEMON_SAVE:-}" ] && [ -f "$ROOT/.env" ]; then
+  set -a; . "$ROOT/.env"; set +a
+fi
+PROJ="$ROOT/PaldeaCoach"
+DLL="$PROJ/bin/Release/net10.0/PaldeaCoach.dll"
+# dotnet from PATH, else the per-user install location (dotnet-install.sh), which autostart sessions may not have on PATH.
+DOTNET="${DOTNET:-$(command -v dotnet || echo "$HOME/.dotnet/dotnet")}"
+
+if [ -z "${POKEMON_SAVE:-}" ] && [ -f "$ROOT/main" ]; then
+  export POKEMON_SAVE="$ROOT/main"
+fi
+
+# Rebuild when the DLL is missing or any source/data file is newer than it.
+if [ ! -f "$DLL" ] || [ -n "$(find "$PROJ" \( -name '*.cs' -o -name '*.csv' -o -name '*.csproj' \) \
+      -not -path '*/obj/*' -not -path '*/bin/*' -newer "$DLL" -print -quit)" ]; then
+  "$DOTNET" build "$PROJ" -c Release --nologo -v quiet >/dev/null || "$DOTNET" build "$PROJ" -c Release --nologo -v quiet >&2
+fi
+
+exec "$DOTNET" "$DLL" "$@"

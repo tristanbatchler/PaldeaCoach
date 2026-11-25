@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Paldea Coach</title>
+  <desc id="desc">Paldea Coach reads your Pokémon Scarlet or Violet save file and tells you how to build a better team. Example: against Larry's Staraptor it recommends sending Tinkatuff and using Play Rough, since Tinkatuff only takes half damage, and ranks the rest of the party.</desc>
+
+  <defs>
+    <linearGradient id="sv" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0.5" stop-color="#F0483E"/>
+      <stop offset="0.5" stop-color="#9B6BFF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="420" rx="24" fill="#15121C"/>
+
+  <!-- Title block -->
+  <g id="title-block" transform="translate(64 0)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <rect x="0" y="62" width="44" height="10" rx="5" fill="url(#sv)"/>
+    <text x="58" y="73" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" letter-spacing="1.5" fill="#9A93A8">POKÉMON SCARLET &amp; VIOLET</text>
+
+    <text x="-3" y="160" font-size="78" font-weight="800" letter-spacing="-2" fill="#F5F1E8">Paldea Coach</text>
+
+    <text x="0" y="214" font-size="28" fill="#F5F1E8">Reads your actual save file.</text>
+    <text x="0" y="252" font-size="28" fill="#F5F1E8">Tells you how to build a better team.</text>
+
+    <!-- The way it's meant to be used: ask an AI in plain English -->
+    <rect x="0" y="292" width="520" height="56" rx="14" fill="#211B2E"/>
+    <rect x="0" y="292" width="6" height="56" rx="3" fill="#9B6BFF"/>
+    <text x="26" y="327" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="21" fill="#F5F1E8"><tspan fill="#9B6BFF">›</tspan> who do I send out vs Staraptor?</text>
+
+    <text x="0" y="382" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17" fill="#9A93A8">coverage · matchups · TMs · bag plan · read-only</text>
+  </g>
+
+  <!-- Real output: ./paldea vs Staraptor (Larry's ace) against a Lv34-39 party -->
+  <g id="project-proof" transform="translate(664 48)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <rect width="472" height="324" rx="18" fill="#0E0C13" stroke="#2A2336" stroke-width="2"/>
+    <text x="28" y="44" font-size="19" fill="#9A93A8">$ paldea vs Staraptor</text>
+
+    <g transform="translate(28 64)">
+      <rect width="416" height="54" rx="12" fill="#2A1519"/>
+      <text x="18" y="35" font-size="20" font-weight="700" fill="#F5F1E8">Tinkatuff → Play Rough</text>
+      <rect x="306" y="14" width="94" height="26" rx="13" fill="#F0483E"/>
+      <text x="353" y="33" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">takes ½×</text>
+    </g>
+
+    <!-- Party ranked by expected damage ÷ damage taken (bar = score, 252 = 212 units) -->
+    <g transform="translate(28 146)" font-size="19">
+      <g>
+        <text x="0" y="18" fill="#F5F1E8">Tinkatuff</text>
+        <rect x="156" y="4" width="212" height="16" rx="8" fill="#F0483E"/>
+        <text x="416" y="18" fill="#F5F1E8" text-anchor="end">252</text>
+      </g>
+      <g transform="translate(0 28)">
+        <text x="0" y="18" fill="#C9C3D4">Pawmot</text>
+        <rect x="156" y="4" width="177" height="16" rx="8" fill="#9B6BFF"/>
+        <text x="416" y="18" fill="#C9C3D4" text-anchor="end">210</text>
+      </g>
+      <g transform="translate(0 56)">
+        <text x="0" y="18" fill="#C9C3D4">Clodsire</text>
+        <rect x="156" y="4" width="111" height="16" rx="8" fill="#9B6BFF"/>
+        <text x="416" y="18" fill="#C9C3D4" text-anchor="end">132</text>
+      </g>
+      <g transform="translate(0 84)">
+        <text x="0" y="18" fill="#9A93A8">Sylveon</text>
+        <rect x="156" y="4" width="96" height="16" rx="8" fill="#4A3F5E"/>
+        <text x="416" y="18" fill="#9A93A8" text-anchor="end">114</text>
+      </g>
+      <g transform="translate(0 112)">
+        <text x="0" y="18" fill="#9A93A8">Azumarill</text>
+        <rect x="156" y="4" width="91" height="16" rx="8" fill="#4A3F5E"/>
+        <text x="416" y="18" fill="#9A93A8" text-anchor="end">108</text>
+      </g>
+      <g transform="translate(0 140)">
+        <text x="0" y="18" fill="#9A93A8">Meowscarada</text>
+        <rect x="156" y="4" width="46" height="16" rx="8" fill="#4A3F5E"/>
+        <text x="416" y="18" fill="#9A93A8" text-anchor="end">55</text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+# Save files: never commit your game save (it contains your trainer name/ID).
+main
+main.*
+*.bak
+*.sav
+saves/
+
+# Local settings
+.env
+
+# Archives / snapshots
+*.tgz
+*.tar.gz
+*.zip
+
+# .NET build output
+bin/
+obj/
+
+# Python
+__pycache__/
+*.pyc
+
+# Editors / OS
+.vs/
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Generated locally from pokemondb.net, which doesn't allow redistribution (see README)
+PaldeaCoach/Data/tm_recipes.csv
