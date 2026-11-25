@@ -1,0 +1,38 @@
+name: Bug or compatibility report
+description: Something wrong, or a report that it works (or doesn't) with your game/emulator/setup.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! Please **don't attach your save file**. It contains your trainer name and ID.
+        If you paste `summary` output, remove the `Trainer:` line first.
+  - type: dropdown
+    id: game
+    attributes:
+      label: Game
+      options: [Scarlet, Violet]
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Where the save comes from
+      placeholder: "e.g. Eden 0.2.1 (Flathub), Ryujinx, real Switch via JKSV"
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OS
+      placeholder: "e.g. Bazzite 45, Windows 11, macOS 15"
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: The command you ran, what you expected, and what you got.
+      placeholder: |
+        ./paldea coverage
+        ...
+      render: text
+    validations:
+      required: true
